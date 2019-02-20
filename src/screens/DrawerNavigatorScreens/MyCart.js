@@ -77,17 +77,17 @@ class Cart extends Component{
                           <Image source={item.image.src} style={{width:wp('20%'), height:hp('12%'),}}/>
                           <View style={{textAlign:'start', width:wp('45%')}}>
                               <View style={{flexDirection:'row'}}>
-                                <Text style={{textAlign:'left', color:'#6BBAF5', width:wp('10%'), fontWeight:'bold', fontSize:wp('4%')}}>{localization.cartProductName}</Text>
+                                <Text style={{textAlign:'left', color:'#6BBAF5', width:wp('16%'), fontWeight:'bold', fontSize:wp('4%')}}>{localization.cartProductName}</Text>
                                 <Text style={{textAlign:'left', color:'#6BBAF5', marginHorizontal:wp('1%'), fontWeight:'bold', fontSize:wp('4%')}}>:</Text>
                                 <Text style={{textAlign:'left', color:'#4F4F4F', fontWeight:'bold', fontSize:wp('4%')}}>{item.name}</Text>
                               </View>
                               <View style={{flexDirection:'row'}}>
-                                <Text style={{textAlign:'left', color:'#6BBAF5', width:wp('10%'), fontWeight:'bold', fontSize:wp('4%')}}>{localization.cartProductWeight}</Text>
+                                <Text style={{textAlign:'left', color:'#6BBAF5', width:wp('16%'), fontWeight:'bold', fontSize:wp('4%')}}>{localization.cartProductWeight}</Text>
                                 <Text style={{textAlign:'left', color:'#6BBAF5', marginHorizontal:wp('1%'), fontWeight:'bold', fontSize:wp('4%')}}>:</Text>
                                 <Text style={{textAlign:'left', color:'#4F4F4F', fontWeight:'bold', fontSize:wp('4%')}}>{item.weight}</Text>
                               </View>
                               <View style={{flexDirection:'row'}}>
-                                <Text style={{textAlign:'left', color:'#6BBAF5', width:wp('10%'), fontWeight:'bold', fontSize:wp('4%')}}>{localization.cartProductQuantity}</Text>
+                                <Text style={{textAlign:'left', color:'#6BBAF5', width:wp('16%'), fontWeight:'bold', fontSize:wp('4%')}}>{localization.cartProductQuantity}</Text>
                                 <Text style={{textAlign:'left', color:'#6BBAF5', marginHorizontal:wp('1%'), fontWeight:'bold', fontSize:wp('4%')}}>:</Text>
 
                                 <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
@@ -113,7 +113,7 @@ class Cart extends Component{
                                 </View>
                               </View>
                               <View style={{flexDirection:'row'}}>
-                                <Text style={{textAlign:'left', color:'#6BBAF5', width:wp('10%'), fontWeight:'bold', fontSize:wp('4%')}}>{localization.cartProductPrice}</Text>
+                                <Text style={{textAlign:'left', color:'#6BBAF5', width:wp('14%'), fontWeight:'bold', fontSize:wp('4%')}}>{localization.cartProductPrice}</Text>
                                 <Text style={{textAlign:'left', color:'#6BBAF5', marginHorizontal:wp('1%'), fontWeight:'bold', fontSize:wp('4%')}}>:</Text>
                                 <Text style={{textAlign:'left', color:'#4F4F4F', fontWeight:'bold', fontSize:wp('4%')}}>{item.price}</Text>
                               </View>

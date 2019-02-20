@@ -16,7 +16,7 @@ export default class App extends Component {
   constructor(){
     super();
     this.state={
-      language:'ar'
+      language:'en'
     }
     AsyncStorage.getItem('language').then((value)=>{
       console.log(value);
