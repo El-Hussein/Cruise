@@ -27,12 +27,13 @@ class Artboard3 extends Component{
          super();
          this.state= {
              list:[
-                 {name:localization.homeDrawer, icon:require('../assets/images/homeDrawer.png'), active:true, link:'Home'},
-                 {name:localization.profileDrawer, icon:require('../assets/images/profileDrawer.png'), active:false, link:'Profile'},
-                 {name:localization.cartDrawer, icon:require('../assets/images/cartDrawer.png'), active:false, link:'MyCart'},
-                 {name:localization.call_usDrawer, icon:require('../assets/images/call_usDrawer.png'), active:false, link:'Call_Us'},
-                 {name:localization.conditionsDrawer, icon:require('../assets/images/conditionsDrawer.png'), active:false, link:'Conditions'},
-                 {name:localization.exitDrawer, icon:require('../assets/images/exitDrawer.png'), active:false, link:'Exit'},
+                 {name:localization.homeDrawer, icon:'home', active:true, link:'Home'},
+                 {name:localization.profileDrawer, icon:'user', active:false, link:'Profile'},
+                 {name:localization.cartDrawer, icon:'shopping-cart', active:false, link:'MyCart'},
+                 {name:localization.call_usDrawer, icon:'users', active:false, link:'Call_Us'},
+                 {name:localization.conditionsDrawer, icon:'cog', active:false, link:'Conditions'},
+                 {name:localization.Signin, icon:'sign-in', active:false, link:'Signin'},
+                 {name:localization.exitDrawer, icon:'sign-out', active:false, link:'Exit'},
              ]
          }
     }
@@ -40,15 +41,7 @@ class Artboard3 extends Component{
     render () {
          return (
             <ImageBackground source={DrawerBG}  style={{height:hp('100%'), width:wp('100%'), backgroundColor:'red'}}>
-                <View style={{backgroundColor:'#1976D3', marginTop:hp('3%'), marginHorizontal:wp('2%'), flexDirection:'row', justifyContent:'center', alignItems:'center', width:wp('80%'), height:hp('7%'), borderRadius:wp('6%')}}>
-                    <TextInput
-                    style={{padding:0, color:'white', fontSize:wp('5%'), fontWeight:'bold', width:wp('65%'), textAlign:'center', textAlignVertical:'center'}}
-                    placeholder={localization.search}
-                    placeholderTextColor="white"
-                    onChangeText={(text)=>this.setState({text})}
-                    />
-                    <Icon name="search" size={wp('5%')} color="white"/>
-                </View>
+            
                 <View style={{height:hp('25%'), width:wp('85%'), justifyContent:'center', alignItems:'center'}}>
                     <Image source={ProfileDefault} style={{width:wp('18%'), borderWidth:wp('0.8%'), borderColor:'white', height:wp('18%'), borderRadius:wp('9%'), backgroundColor:'red', marginBottom:wp('1%')}}/>
                     <Text style={{fontWeight:'bold', fontSize:wp('4.2%'), color:'white'}}> محمد عبدالله إبراهيم </Text>
@@ -70,7 +63,7 @@ class Artboard3 extends Component{
                         }
                         return (
                         <TouchableOpacity disabled={item.active} onPress={()=>this.props.navigation.navigate(item.link)} style={[{justifyContent:'center', flexDirection:'row', alignItems:'center', height:hp('7.5%'), width:wp('85%')}, activeStyle.AC]}>
-                            <Image source={item.icon} style={{width:wp('6%'), height:wp('6%'), resizeMode:'contain', marginRight:wp('2%')}}/>
+                            <Icon name={item.icon} color="#0857A6" size={wp('6%')} style={{marginRight:wp('2%')}}/>
                             <Text style={{fontWeight:'bold', fontSize:wp('4.5%'), color:'#E4EFF5', textAlign:'left', width:wp('70%')}}> {item.name} </Text>
                         </TouchableOpacity>
                         )

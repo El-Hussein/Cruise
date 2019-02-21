@@ -15,7 +15,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { withNavigation } from 'react-navigation';
 import { NavigationActions } from 'react-navigation';
 
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logoN.png';
 
 class Header extends React.Component {
     render() {
@@ -28,16 +28,13 @@ class Header extends React.Component {
 
         return (
             <View style={styles.header}>
-                <TouchableOpacity onPress={()=>this.props.navigation.toggleDrawer()}>
+                <TouchableOpacity style={{position:'absolute', left:wp('4%')}} onPress={()=>this.props.navigation.toggleDrawer()}>
                     <Icon name="bars" color="white" size={wp('7%')}/>
                 </TouchableOpacity>
                 <View>
-                    <Image source={logo} style={{width:wp('20%'), height:hp('6%'), resizeMode:'contain'}}/>
+                    <Image source={logo} style={{width:wp('25%'), height:hp('7%'), resizeMode:'contain'}}/>
                 </View>
                 {/* <TouchableOpacity  onPress={()=>this.props.navigation.dispatch(NavigationActions.back())}> */}
-                <TouchableOpacity>
-                    <Icon name="ellipsis-h" color="white" size={wp('7%')}/>
-                </TouchableOpacity>
             </View>
         )
     }
@@ -51,7 +48,7 @@ const styles = StyleSheet.create({
     header:{
         height:hp('7%'),
         backgroundColor:"#2196F3",
-        justifyContent:'space-between',
+        justifyContent:'center',
         alignItems:'center',
         padding:wp('5%'),
         flexDirection:'row'

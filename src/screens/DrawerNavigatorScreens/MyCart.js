@@ -22,6 +22,7 @@ import {
 } from 'react-native-responsive-screen';
 import localization from '../../localization/localization';
 import Header from '../../components/Header';
+import BG from '../../assets/images/bg.png';
 
 import cat1_image from '../../assets/images/product.jpg';
 import plus from '../../assets/images/plus.png';
@@ -57,7 +58,7 @@ class Cart extends Component{
 
   render () {
     return (
-        <View style={{flex:1}}>
+        <ImageBackground source={BG} style={{width:wp('100%'), height:hp('100%')}}>
             {/* Header */}
               <Header/>
               <View style={{backgroundColor:'#3FA9FD', flexDirection:'row', justifyContent:'flex-start', paddingHorizontal:wp('5%'), height:hp('4.5%'), alignItems:'center'}}>
@@ -66,6 +67,15 @@ class Cart extends Component{
                 </TouchableOpacity>
                 <Text style={{color:'white', fontSize:wp('4.5%'), marginHorizontal:wp('1%')}}> {localization.MyOrders} </Text>
                 <Icon name="shopping-cart" size={wp('5%')} color="white"/>
+              </View>
+
+              <View style={{justifyContent:'space-around', alignItems:'center', marginTop:hp('2%'), marginHorizontal:wp('15%'), flexDirection:'row', }}>
+                  <TouchableOpacity disabled={true} style={{justifyContent:'center', alignItems:'center', width:wp('30%'), height:hp('5%'), backgroundColor:'#3FA9FD', borderRadius:wp('5%'), borderColor:'#2196F3', borderWidth:wp('0.2%')}}>
+                      <Text style={{fontSize:wp('4%'), fontWeight:'800', color:'white'}}> {localization.current} </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('30%'), height:hp('5%'), backgroundColor:'white', borderRadius:wp('5%'), borderColor:'#2196F3', borderWidth:wp('0.2%')}}>
+                      <Text style={{fontSize:wp('4%'), fontWeight:'800', color:'#2196F3'}}> {localization.previous} </Text>
+                  </TouchableOpacity>
               </View>
               <View style={{alignItems:'center', justifyContent:'center', marginTop:hp('2%')}}>
                 <FlatList 
@@ -130,7 +140,7 @@ class Cart extends Component{
                 numColumns={1}
                 /> 
             </View>
-        </View>
+        </ImageBackground>
     )
   }
 }

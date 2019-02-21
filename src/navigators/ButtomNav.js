@@ -3,8 +3,8 @@
 import { createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import localization from '../localization/localization';
-import Home from '../screens/ButtomNavigatorScreens/Home';
-import Menu from '../screens/ButtomNavigatorScreens/Menu';
+import Home from './CatNavigator';
+import Profile from '../screens/ButtomNavigatorScreens/Profile';
 import Search from '../screens/ButtomNavigatorScreens/Search';
 import Cart from '../screens/ButtomNavigatorScreens/Cart';
 import Settings from '../screens/ButtomNavigatorScreens/Settings';
@@ -28,16 +28,10 @@ const ButtomNav = createBottomTabNavigator(
         title: localization.cart,
       })
     },
-    Search: {
-      screen:Search,
+    Profile: {
+      screen:Profile,
       navigationOptions:({navigation})=>({
-        title: localization.search,
-      })
-    },
-    Menu: {
-      screen:Menu,
-      navigationOptions:({navigation})=>({
-        title: localization.menu,
+        title: localization.profileDrawer,
       })
     },
     Home: {
@@ -55,8 +49,8 @@ const ButtomNav = createBottomTabNavigator(
         let iconName;
         if (routeName === 'Home') {
           iconName = "home";
-        } else if (routeName === 'Menu') {
-          iconName = "list-ul";
+        } else if (routeName === 'Profile') {
+          iconName = "user";
         } else if (routeName === 'Search') {
             iconName = "search";
         } else if (routeName === 'Cart') {

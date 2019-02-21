@@ -11,13 +11,24 @@ import { I18nManager, AsyncStorage } from 'react-native';
 import RNRestart from 'react-native-restart'; 
 import localization from './src/localization/localization';
 import RootNav from './src/navigators/DrawerNav';
+import SplashScreen from './src/screens/Splash';
+import TempNav from './src/navigators/TempNav';
+
 
 export default class App extends Component {
   constructor(){
     super();
     this.state={
-      language:'en'
+      rootPage: <SplashScreen />,
+      language:'ar'
     }
+    setTimeout(
+      ()=>{
+        this.setState({
+          rootPage: <TempNav />
+        });
+      },2000
+    )
     AsyncStorage.getItem('language').then((value)=>{
       console.log(value);
     })
@@ -47,7 +58,7 @@ export default class App extends Component {
 
   render() { 
     return (
-        <RootNav/>       
+        this.state.rootPage       
     );
   }
 }

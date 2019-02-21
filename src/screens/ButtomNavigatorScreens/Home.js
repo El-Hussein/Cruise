@@ -21,7 +21,16 @@ import {
 } from 'react-native-responsive-screen';
 import Header from '../../components/Header';
 
-import cat1_image from '../../assets/images/product.jpg';
+import market1 from '../../assets/images/market1.jpg';
+import market2 from '../../assets/images/market2.jpg';
+import market3 from '../../assets/images/market3.jpg';
+import market4 from '../../assets/images/market4.jpg';
+import market5 from '../../assets/images/market5.jpg';
+import market6 from '../../assets/images/market6.jpg';
+import market7 from '../../assets/images/market7.jpg';
+import market8 from '../../assets/images/market8.jpg';
+import market9 from '../../assets/images/market9.jpg';
+import BG from '../../assets/images/bg.jpg';
 
 // const Slider = props => ( <View style={[styles.imageContainer, {alignItems:'center', justifyContent:'center', marginTop:10,}]}>
 //         <Image style={{height:hp('14.8%'), width:wp('99%')}} source={props.uri} resizeMode="contain"/>
@@ -34,22 +43,22 @@ class Home extends Component{
     super()
     this.state = {
       products: [
-        {code:0, image:{src: cat1_image, width:2480, height:3508}, name:"نسكافيه فانيليا",},
-        {code:1, image:{src: cat1_image, width:2480, height:3508}, name:"نسكافيه فانيليا",},
-        {code:2, image:{src: cat1_image, width:2480, height:3508}, name:"نسكافيه فانيليا",},
-        {code:3, image:{src: cat1_image, width:2480, height:3508}, name:"نسكافيه فانيليا",},
-        {code:4, image:{src: cat1_image, width:2480, height:3508}, name:"نسكافيه فانيليا",},
-        {code:5, image:{src: cat1_image, width:2480, height:3508}, name:"نسكافيه فانيليا",},
-        {code:6, image:{src: cat1_image, width:2480, height:3508}, name:"نسكافيه فانيليا",},
-        {code:7, image:{src: cat1_image, width:2480, height:3508}, name:"نسكافيه فانيليا",},
-        {code:8, image:{src: cat1_image, width:2480, height:3508}, name:"نسكافيه فانيليا",},
+        {code:0, image:{src: market1, width:2480, height:3508}, name:"نسكافيه فانيليا",},
+        {code:1, image:{src: market2, width:2480, height:3508}, name:"نسكافيه فانيليا",},
+        {code:2, image:{src: market3, width:2480, height:3508}, name:"نسكافيه فانيليا",},
+        {code:3, image:{src: market4, width:2480, height:3508}, name:"نسكافيه فانيليا",},
+        {code:4, image:{src: market5, width:2480, height:3508}, name:"نسكافيه فانيليا",},
+        {code:5, image:{src: market6, width:2480, height:3508}, name:"نسكافيه فانيليا",},
+        {code:6, image:{src: market7, width:2480, height:3508}, name:"نسكافيه فانيليا",},
+        {code:7, image:{src: market8, width:2480, height:3508}, name:"نسكافيه فانيليا",},
+        {code:8, image:{src: market9, width:2480, height:3508}, name:"نسكافيه فانيليا",},
       ],
     }
   }
   
   render () {
     return (
-        <View>
+        <ImageBackground source={BG} style={{width:wp('100%'), height:hp('100%')}}>
             {/* Header */}
             <Header/>
             <View style={{}}>
@@ -66,7 +75,7 @@ class Home extends Component{
                 <Icon name="search" size={wp('5%')} color="white"/>
               </View>
             </View>
-
+ 
 
             <FlatList 
                 data={this.state.products}
@@ -90,7 +99,7 @@ class Home extends Component{
             <TouchableOpacity style={{backgroundColor:'rgb(33, 150, 243)', marginHorizontal:wp('20%'), flexDirection:'row', justifyContent:'center', alignItems:'center', width:wp('60%'), height:hp('5%'), borderRadius:wp('6%'), borderColor:'white', borderWidth:wp('0.3%'), marginTop:hp('5%')}}>
               <Text style={{color:'white', fontSize:wp('5%')}}> {localization.freeDlievery} </Text>
             </TouchableOpacity>
-        </View>
+        </ImageBackground>
     )
   }
 }

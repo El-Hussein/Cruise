@@ -73,15 +73,24 @@ class Signin extends Component{
                         <Icon name="lock" size={wp('5%')} color="#87CBFC"/>
                     </View>
 
-                    <View style={{justifyContent:'center', alignItems:'center', marginVertical:hp('3%')}}>        
-                        <View style={{width:wp('80%'), height:hp('0.6%'), backgroundColor:'#3FA9FD'}}/>
-                    </View>        
+                    <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal:wp('1%'), alignItems:'center'}}>
+                        <TouchableOpacity onPress={()=>this.props.navigation.navigate('Register')}>
+                            <Text style={{color:'white', fontSize:wp('4%')}}>{localization.registerNew}</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Text style={{color:'white', fontSize:wp('4%')}}>{localization.forgetPassword}</Text>
+                        </TouchableOpacity>
+                    </View>
 
-                    <View style={{justifyContent:'center', alignItems:'center'}}>
-                        <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('30%'), height:hp('5%')}}>
+                    <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('2%')}}>
+                        <TouchableOpacity onPress={()=>this.props.navigation.navigate('Signin')} style={{justifyContent:'center', alignItems:'center', width:wp('30%'), height:hp('5%'), backgroundColor:'#2196F3', borderRadius:wp('5%'), borderColor:'rgba(255,255,255,0.4)', borderWidth:wp('0.2%')}}>
                             <Text style={styles.buttonText}> {localization.login} </Text>
                         </TouchableOpacity>
                     </View>
+
+                    <View style={{justifyContent:'center', alignItems:'center', marginVertical:hp('3%')}}>        
+                        <View style={{width:wp('80%'), height:hp('0.6%'), backgroundColor:'#3FA9FD'}}/>
+                    </View>        
                 </View>
 
             </View>
