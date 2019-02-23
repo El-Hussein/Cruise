@@ -24,18 +24,19 @@ import localization from '../localization/localization';
 class Artboard3 extends Component{
 
     constructor(props) {
-         super();
-         this.state= {
-             list:[
-                 {name:localization.homeDrawer, icon:'home', active:true, link:'Home'},
-                 {name:localization.profileDrawer, icon:'user', active:false, link:'Profile'},
-                 {name:localization.cartDrawer, icon:'shopping-cart', active:false, link:'MyCart'},
-                 {name:localization.call_usDrawer, icon:'users', active:false, link:'Call_Us'},
-                 {name:localization.conditionsDrawer, icon:'cog', active:false, link:'Conditions'},
-                 {name:localization.Signin, icon:'sign-in', active:false, link:'Signin'},
-                 {name:localization.exitDrawer, icon:'sign-out', active:false, link:'Exit'},
-             ]
-         }
+        super();
+        this.state= {
+            list:[
+                {name:localization.homeDrawer, icon:'home', active:true, link:'Home'},
+                {name:localization.profileDrawer, icon:'user', active:false, link:'Profile'},
+                {name:localization.cartDrawer, icon:'shopping-cart', active:false, link:'MyCart'},
+                {name:localization.call_usDrawer, icon:'users', active:false, link:'Call_Us'},
+                {name:localization.conditionsDrawer, icon:'cog', active:false, link:'Conditions'},
+                {name:localization.Signin, icon:'sign-in', active:false, link:'Signin'},
+                {name:localization.exitDrawer, icon:'sign-out', active:false, link:'Exit'},
+            ],
+            userType:'merchent',
+        }
     }
 
     render () {
@@ -62,7 +63,13 @@ class Artboard3 extends Component{
                             });
                         }
                         return (
-                        <TouchableOpacity disabled={item.active} onPress={()=>this.props.navigation.navigate(item.link)} style={[{justifyContent:'center', flexDirection:'row', alignItems:'center', height:hp('7.5%'), width:wp('85%')}, activeStyle.AC]}>
+                        <TouchableOpacity disabled={item.active} onPress={()=>{
+                            if(item.link === 'MyCart' && this.state.userType==='merchent'){
+                                this.props.navigation.navigate('MerchentCart')
+                            }else {
+                                this.props.navigation.navigate(item.link)
+                            }
+                        }} style={[{justifyContent:'center', flexDirection:'row', alignItems:'center', height:hp('7.5%'), width:wp('85%')}, activeStyle.AC]}>
                             <Icon name={item.icon} color="#0857A6" size={wp('6%')} style={{marginRight:wp('2%')}}/>
                             <Text style={{fontWeight:'bold', fontSize:wp('4.5%'), color:'#E4EFF5', textAlign:'left', width:wp('70%')}}> {item.name} </Text>
                         </TouchableOpacity>

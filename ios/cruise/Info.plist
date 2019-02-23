@@ -70,5 +70,9 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow Cruise to use your storage</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow Cruise to use your Camera</string>
 </dict>
 </plist>

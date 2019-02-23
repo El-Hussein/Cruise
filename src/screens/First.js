@@ -16,8 +16,9 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import logoH from '../assets/images/logoN.png';
 
-import Header from '../components/Header';
+// import Header from '../components/Header';
 
 import BG from '../assets/images/bg.png';
 import logo from '../assets/images/logo.png';
@@ -34,7 +35,15 @@ class First extends Component{
          return (
             <View style={{backgroundColor:'white', height:hp('100%')}}>
                 {/* HEADER */}
-                <Header/>
+                <View style={styles.header}>
+                    <TouchableOpacity style={{position:'absolute', left:wp('4%')}}>
+                        <Icon name="bars" color="white" size={wp('7%')}/>
+                    </TouchableOpacity>
+                    <View>
+                        <Image source={logoH} style={{width:wp('25%'), height:hp('7%'), resizeMode:'contain'}}/>
+                    </View>
+                    {/* <TouchableOpacity  onPress={()=>this.props.navigation.dispatch(NavigationActions.back())}> */}
+                </View>
                  
                 <View style={{marginHorizontal:wp('18%')}}>
 
@@ -107,5 +116,23 @@ const styles = StyleSheet.create({
         textAlign:'center', 
         fontSize:wp('5%'), 
         fontWeight:'bold'
+    },
+    header:{
+        height:hp('7%'),
+        backgroundColor:"#2196F3",
+        justifyContent:'center',
+        alignItems:'center',
+        padding:wp('5%'),
+        flexDirection:'row'
+    },
+    image4_5:{
+        width:wp('4.5%'), 
+        height:wp('4.5%'), 
+        resizeMode:'contain'
+    },
+    rowCenter:{
+        justifyContent:'center', 
+        alignItems:'center', 
+        flexDirection:'row'
     },
 });

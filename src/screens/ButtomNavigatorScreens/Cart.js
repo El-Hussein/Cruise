@@ -23,6 +23,7 @@ import {
 } from 'react-native-responsive-screen';
 import localization from '../../localization/localization';
 import Header from '../../components/Header';
+import BG from '../../assets/images/bg.png';
 
 import cat1_image from '../../assets/images/product.jpg';
 import plus from '../../assets/images/plus.png';
@@ -43,6 +44,7 @@ class Cart extends Component{
         {code:1, image:{src: cat1_image, width:2480, height:3508}, times:1, specs:"18.5 جرام 10 كيس", name:"نسكافيه فانيليا", price:2299},
         {code:2, image:{src: cat1_image, width:2480, height:3508}, times:1, specs:"18.5 جرام 10 كيس", name:"نسكافيه فانيليا", price:5999},
       ],
+      userType:'merchent',
     }
   }
   
@@ -57,12 +59,12 @@ class Cart extends Component{
 
   render () {
     return (
-        <View style={{flex:1}}>
+        <ImageBackground source={BG} style={{width:wp('100%'), height:hp('100%')}}>
             {/* Header */}
             <Header/>
             <Text> {localization.cart} </Text>
               <View style={{alignItems:'center', justifyContent:'center', marginTop:hp('2%')}}>
-                <FlatList 
+              <FlatList 
                 data={this.state.products}
                 renderItem={({item}) =>{
                     return(
@@ -72,6 +74,7 @@ class Cart extends Component{
                           <View style={{textAlign:'start', width:wp('45%')}}>
                               <Text style={{textAlign:'left', color:'#4F4F4F', fontWeight:'bold', fontSize:wp('4%')}}>{item.name}</Text>
                               <Text style={{textAlign:'left', color:'#4F4F4F', fontWeight:'bold', fontSize:wp('3%')}}>{item.specs}</Text>
+                              {(this.state.userType==='customer')?
                               <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', padding:wp('2%')}}>
                                 <View style={{flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
                                     <TouchableOpacity style={{padding:wp('1%')}} onPress={()=>{
@@ -80,23 +83,27 @@ class Cart extends Component{
                                             total:this.state.total-item.price
                                         });
                                     }}>
-                                        <Image source={plus} style={{resizeMode:'contain', width:wp('5%'), height:wp('5%')}}/>
+                                        <Image source={plus} style={{resizeMode:'contain', width:wp('8%'), height:wp('8%')}}/>
                                     </TouchableOpacity>
-                                    <Text style={{color:'white', fontSize:wp('3%'), fontWeight:'bold', backgroundColor:'#1899FE', width:wp('4%'), textAlign:'center', borderRadius:wp('10%')}}> {item.times} </Text>
+                                    <Text style={{color:'white', fontSize:wp('4.5%'), fontWeight:'bold', backgroundColor:'#1899FE', width:wp('6%'), textAlign:'center', borderRadius:wp('12%')}}> {item.times} </Text>
                                     <TouchableOpacity style={{padding:wp('1%')}} onPress={()=>{
                                       this.state.products[item.code].times--;
                                       this.setState({
                                         total:this.state.total+item.price
                                       });
                                     }}>
-                                        <Image source={minus} style={{resizeMode:'contain', width:wp('5%'), height:wp('5%')}}/>
+                                        <Image source={minus} style={{resizeMode:'contain', width:wp('8%'), height:wp('8%')}}/>
                                     </TouchableOpacity>
                                 </View>
-                            </View>
+                              </View>
+                              :<View/>
+                              }
                           </View>
-                          <TouchableOpacity style={{backgroundColor:'#1899FE', borderRadius:wp('2%'), paddingHorizontal:wp('2%'), height:hp('3.5%'), justifyContent:'center', alignItems:'center'}}>
+                          {(this.state.userType==='customer')?
+                          <TouchableOpacity onPress={()=>this.props.navigation.navigate('Order')} style={{backgroundColor:'#1899FE', borderRadius:wp('2%'), paddingHorizontal:wp('2%'), height:hp('3.5%'), justifyContent:'center', alignItems:'center'}}>
                             <Text style={{color:'white', fontSize:wp('4%')}}> {localization.add} </Text>
                           </TouchableOpacity>
+                          :<Text/>}
                       </View>
                     )
                     }
@@ -106,7 +113,7 @@ class Cart extends Component{
                 numColumns={1}
                 /> 
             </View>
-        </View>
+        </ImageBackground>
     )
   }
 }

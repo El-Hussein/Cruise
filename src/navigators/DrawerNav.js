@@ -13,7 +13,8 @@ import MyCart from '../screens/DrawerNavigatorScreens/MyCart';
 import ContentDrawerComponent from '../components/ContentDrawerCompnent';
 import Conditions from '../screens/DrawerNavigatorScreens/Conditions';
 import Call_Us from '../screens/DrawerNavigatorScreens/Call_Us';
-
+import MerchentCart from '../navigators/MerchentOrdersNav'
+// import MerchentCart from '../screens/MerchentOrders/MerchentCart'
 import Register from '../screens/AuthScreens/Register';
 import Signin from '../screens/AuthScreens/Signin';
 
@@ -32,6 +33,12 @@ export default RootNavigator = createDrawerNavigator(
                 title:"Profile", 
             }
         },
+        MerchentCart: {
+            screen: MerchentCart,
+            navigationOption:{
+                title:"MerchentCart", 
+            }
+        },
         MyCart: {
             screen: MyCart,
             navigationOption:{
@@ -48,12 +55,6 @@ export default RootNavigator = createDrawerNavigator(
             screen: Register,
             navigationOptions: {
                 title:'Test'
-        },
-        Exit: {
-            screen: Conditions,
-            navigationOption:{
-                title:"Exit", 
-            }
         },
     },
         

@@ -45,6 +45,7 @@ class Cart extends Component{
         {code:1, image:{src: cat1_image, width:2480, height:3508}, times:1, specs:"18.5 جرام 10 كيس", name:"نسكافيه فانيليا", price:2299},
         {code:2, image:{src: van, width:2480, height:3508}, times:1, specs:"18.5 جرام 10 كيس", name:"نسكافيه فانيليا", price:5999},
       ],
+      userType:'merchent',
     }
   }
   
@@ -73,6 +74,7 @@ class Cart extends Component{
                           <View style={{textAlign:'start', width:wp('45%')}}>
                               <Text style={{textAlign:'left', color:'#4F4F4F', fontWeight:'bold', fontSize:wp('4%')}}>{item.name}</Text>
                               <Text style={{textAlign:'left', color:'#4F4F4F', fontWeight:'bold', fontSize:wp('3%')}}>{item.specs}</Text>
+                              {(this.state.userType==='customer')?
                               <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', padding:wp('2%')}}>
                                 <View style={{flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
                                     <TouchableOpacity style={{padding:wp('1%')}} onPress={()=>{
@@ -93,11 +95,15 @@ class Cart extends Component{
                                         <Image source={minus} style={{resizeMode:'contain', width:wp('8%'), height:wp('8%')}}/>
                                     </TouchableOpacity>
                                 </View>
-                            </View>
+                              </View>
+                              :<View/>
+                              }
                           </View>
+                          {(this.state.userType==='customer')?
                           <TouchableOpacity onPress={()=>this.props.navigation.navigate('Order')} style={{backgroundColor:'#1899FE', borderRadius:wp('2%'), paddingHorizontal:wp('2%'), height:hp('3.5%'), justifyContent:'center', alignItems:'center'}}>
                             <Text style={{color:'white', fontSize:wp('4%')}}> {localization.add} </Text>
                           </TouchableOpacity>
+                          :<Text/>}
                       </View>
                     )
                     }

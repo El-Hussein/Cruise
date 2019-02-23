@@ -46,7 +46,21 @@ export default localization = new LocalizedStrings({
         updatePasswordOld:'old password',
         updatePasswordNew:'new password',
         updatePasswordConfirmNew:'re-enter password',
+        
 
+        registerMerchentname:'merchent name',
+        registerWorkingHours:'working hours form ... to ...',
+        registerMerchentPhoto:'take photo',
+        agreeToConds:'agree to conditions',
+        RegisterMerchent:'Register Merchent',
+        newOrders:'New Orders',
+        clientName:'Client Name',
+        total:'total',
+        accept:'Accept',
+        call:'Call',
+        finishOrder:'Finish Order',
+        cancel:'Cancel',
+        phone:'Phone',
     },
     ar: {
         home: 'الرئيسية',
@@ -94,6 +108,20 @@ export default localization = new LocalizedStrings({
         updatePasswordOld:'كلمة المرور القديمة',
         updatePasswordNew:'كلمة المرور الجديدة',
         updatePasswordConfirmNew:'اعادة كلمة المرور',
+        
 
+        registerMerchentname:'إسم البقالة',
+        registerWorkingHours:'ساعات العمل من ...الي ...',
+        registerMerchentPhoto:'رفع صورة',
+        agreeToConds:'الموافقه علي الشروط والاحكام',
+        RegisterMerchent:'تسجيل البقالة',
+        newOrders:'طلباتي الجديدة',
+        clientName:'اسم العميل',
+        total:'المجموع',
+        accept:'قبول',
+        call:'إتصال',
+        finishOrder:'إنهاء الطلب',
+        cancel:'إلغاء',
+        phone:'رقم الجوال',
     }
 })
