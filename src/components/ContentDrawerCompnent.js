@@ -35,7 +35,7 @@ class Artboard3 extends Component{
                 {name:localization.Signin, icon:'sign-in', active:false, link:'Signin'},
                 {name:localization.exitDrawer, icon:'sign-out', active:false, link:'Exit'},
             ],
-            userType:'merchent',
+            userType:'customer',
         }
     }
 

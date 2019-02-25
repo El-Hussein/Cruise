@@ -50,7 +50,7 @@ class ClientOrders extends Component{
         {code:2, image:{src: cat3_image, width:2480, height:3508}, quantity:4, name:"ليز", price:30},
         {code:2, image:{src: cat4_image, width:2480, height:3508}, quantity:2, name:"حليب", price:30},
       ],
-      userType:'merchent',
+      userType:'customer',
     }
   }
   

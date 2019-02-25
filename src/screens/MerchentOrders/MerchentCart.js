@@ -50,7 +50,7 @@ class Cart extends Component{
         {code:1, clientName:'حسين صلاح', clientAddress:'طوخ - حي الزهور'},
         {code:2, clientName:'حسين صلاح', clientAddress:'طوخ - حي الزهور'},
       ],
-      userType:'merchent',
+      userType:'customer',
     }
   }
   

@@ -45,7 +45,7 @@ class Cart extends Component{
         {code:1, image:{src: cat1_image, width:2480, height:3508}, times:1, specs:"18.5 جرام 10 كيس", name:"نسكافيه فانيليا", price:2299},
         {code:2, image:{src: van, width:2480, height:3508}, times:1, specs:"18.5 جرام 10 كيس", name:"نسكافيه فانيليا", price:5999},
       ],
-      userType:'merchent',
+      userType:'customer',
     }
   }
   

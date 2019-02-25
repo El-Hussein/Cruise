@@ -30,7 +30,7 @@ class Register extends Component{
         super()    
 
         this.state={
-            userType:'merchent',
+            userType:'customer',
         }
     }
     render () {
